@@ -1,5 +1,10 @@
 const extend = require('extend');
-const echarts = require('echarts');
+const echarts = require('echarts/lib/echarts');
+require('echarts/lib/chart/map');
+require('echarts/lib/chart/scatter');
+require('echarts/lib/chart/lines');
+require('echarts/lib/component/geo');
+
 let uuid = 0;
 
 export default class Hocago {
@@ -15,7 +20,7 @@ export default class Hocago {
         map: this._id,
       },
       series: [{
-        type: 'effectScatter',
+        type: 'scatter',
         coordinateSystem: 'geo',
         zlevel: 2,
         label: {
